@@ -13,7 +13,10 @@ import React, { userState } from 'react';
 
 
 export default function App() {
-  const [mode, setMode] = useState('light'); // Whether dark mode is enabled or not 
+  const [mode, setMode] = useState('dark'); // Whether dark mode is enabled or not 
+  document.body.style.backgroundColor = '#042743';
+  document.title = 'TextUtils - Dark Mode';
+
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type)=>{
