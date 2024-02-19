@@ -4,38 +4,31 @@ import React, {useState} from 'react'
 
 export default function TextForm(props) {
     const handleUpClick = () =>{
-        // console.log("Uppercase was clicked"); 
         let newText = text.toUpperCase();
         setText(newText); 
         props.showAlert("Converted to uppercase!", "success");
     }
     const handleLoClick = () =>{
-        // console.log("Uppercase was clicked"); 
         let newText = text.toLowerCase();
         setText(newText); 
         props.showAlert("Converted to lowercase!", "success")
     }
 
     const handleclearClick = () =>{
-        // console.log("Uppercase was clicked"); 
         let newText = '';
         setText(newText); 
     }
 
     const handleOnChange = (event) =>{
-        // console.log("On change"); 
         setText(event.target.value);
         // debugger;
     }
-    // function handleOnChange(event) {
-    //     setText(event.target.value);
-    // }
+   
 
     
     // const a = "abc";
     
     const [text, setText] = useState('Enter text here');
-    console.log("page reloaded.");
     // handleUpClick();
 
     return (
@@ -49,14 +42,14 @@ export default function TextForm(props) {
             <button className="btn btn-primary mx-1" onClick={handleLoClick}>Convert to Lowercase</button>
             <button className="btn btn-primary mx-1" onClick={handleclearClick}>Clear Text</button>
         </div>
-        <div className="container my-3" style={{color: props.mode=== 'dark'?'white':'#042743'}} >
+        {/* <div className="container my-3" style={{color: props.mode=== 'dark'?'white':'#042743'}} >
             <h1>your text summary</h1>
-            <p>{text.split(" ").length} words and {text.length} characters</p>
+            <p>{text.split(/\s+/).length} words and {text.length} characters</p>
             <p>{0.008 * text.split(" ").length} Minutes read</p>
             <h2>Preview</h2>
             <p>{text.length>0?text:"Enter something to preview it here"}</p>
-        </div>
+        </div> */}
         </>
      )
 }
- 
+
